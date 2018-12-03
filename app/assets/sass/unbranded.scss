@@ -1,0 +1,35 @@
+@import "node_modules/govuk-frontend/settings/all";
+$govuk-global-styles: true;
+
+// Override the govuk-frontend font stack
+$govuk-font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+
+// Remove canvas background colour, as is used with the GOV.UK Footer.
+$govuk-canvas-background-colour: $govuk-body-background-colour;
+
+@import "node_modules/govuk-frontend/all";
+
+// If you need to create a page as part of your journey, but without GOV.UK branding
+// See localhost:3000/docs/examples/blank-unbranded
+
+@media screen and (prefers-color-scheme: dark) {
+  body.govuk-template__body, .govuk-template {
+    background-color: govuk-colour("black");
+    color: govuk-colour("white");
+  }
+  h1, h2, h3, h4, h5, h6, .govuk-heading-xl, .govuk-heading-l, .govuk-heading-m, .govuk-heading-s, .govuk-heading-xs, p, .govuk-list, a.govuk-back-link {
+    color: govuk-colour("white") !important;
+  }
+  a:link {
+    color: $govuk-link-hover-colour;
+  }
+  a:visited {
+    color: $govuk-link-visited-colour;
+  }
+  a:hover {
+    color: lighten($govuk-link-hover-colour, 20%);
+  }
+  a:active {
+    color: $govuk-link-active-colour;
+  }
+}
